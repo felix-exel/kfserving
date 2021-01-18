@@ -1,0 +1,14 @@
+apiVersion: "serving.kubeflow.org/v1beta1"
+kind: "InferenceService"
+metadata:
+  namespace: "kfserving-test"
+  name: "product-recommender"
+spec:
+  predictor:
+    canaryTrafficPercent: 10
+    # 10% of traffic is sent to this model
+    serviceAccountName: "sa" # service account for aws credentials
+    minReplicas: 1 # if 0: replica will scale down to 0 when there are no requests
+    tensorflow:
+      runtimeVersion: "2.4.0" #TensorFlow Serving Version
+      storageUri: "s3://bucket-fex/0/00f118c323604546985c24871736d5d7/artifacts/saved_model/tfmodel/" # subfolder must contain numbers only for tf serving
