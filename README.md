@@ -6,6 +6,7 @@ Related Blog Post: [https://www.novatec-gmbh.de/blog/ausrollen-und-betreiben-von
 - Installation of KFServing as part of Kubeflow or Standalone
 - Install Requirements from [requirements](requirements.txt)
 - Start a MLflow-Server. If you are new to MLflow: https://github.com/felix-exel/mlflow
+- Download any Dataset from https://www.kaggle.com/mkechinov/ecommerce-behavior-data-from-multi-category-store
 - Train the session based recommender model by running the notebook [session_based_recommender_with_mlflow](session_based_recommender_with_mlflow.ipynb)
 - If your MLflow Artifact Storage does not point to a Cloud Store, you need to upload your model files manually for an easy deployment with KFServing.
 - Alternatively you can mount your model by using Persistent Volumes which isn't covered by this repository
